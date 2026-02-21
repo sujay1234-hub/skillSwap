@@ -281,6 +281,30 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
+        /* Floating Chat Button */
+.chat-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.chat-fab:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.7);
+}
 
         /* --- Footer --- */
         footer {
@@ -299,9 +323,18 @@
             .hero-btns { flex-direction: column; }
             .btn-hero { width: 100%; justify-content: center; }
         }
+        a.feature-card {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* keeps original text color */
+  display: block;          /* makes full card clickable */
+}
     </style>
 </head>
 <body>
+    <!-- Floating Chat Shortcut -->
+<a href="chat.html" class="chat-fab">
+    <i class="fa-solid fa-comments"></i>
+</a>
 
     <!-- Navbar -->
     <nav>
@@ -309,9 +342,9 @@
             <i class="fa-solid fa-bolt"></i> SkillSwap
         </a>
         <ul class="nav-links">
-            <li><a href="#">Explore</a></li>
+            <li><a href="explore.html">Explore</a></li>
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
         <div class="nav-actions">
             <!-- Logged Out State -->
@@ -377,13 +410,19 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="feature-card">
-                <div class="feature-icon" style="color: #a855f7;">
-                    <i class="fa-solid fa-trophy"></i>
-                </div>
-                <h3>Reputation System</h3>
-                <p>Earn XP, badges and climb the ranks from Beginner 🟢 to Expert 🟣.</p>
-            </div>
+           <a href="reputation.html" class="feature-card">
+    
+    <div class="feature-icon" style="color: #a855f7;">
+        <i class="fa-solid fa-trophy"></i>
+    </div>
+
+    <h3>Reputation System</h3>
+
+    <p>
+        Earn XP, badges and climb the ranks from Beginner 🟢 to Expert 🟣.
+    </p>
+
+</a>
 
             <!-- Card 4 -->
             <div class="feature-card">
@@ -500,3 +539,4 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 </script>
+</body>
